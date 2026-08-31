@@ -1,0 +1,66 @@
+{
+  "name": "dsh-gsd-bridge",
+  "version": "0.1.0",
+  "description": "GSD Core workflow bridge for DeepSeek Harness: mounts @opengsd/gsd-core as /gsd-* slash commands with session orientation.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-llm": ">=0.0.1-rc.1",
+    "@opengsd/gsd-core": "1.12.0",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-commands": ">=0.0.1-rc.1",
+    "@deepseek-ai/dsh-fs": ">=0.0.1-rc.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-agent": "0.1.0-rc.6",
+    "@deepseek-ai/dsh-commands": "0.1.0-rc.6",
+    "@deepseek-ai/dsh-fs": "0.1.0-rc.6",
+    "@deepseek-ai/dsh-llm": "0.1.0-rc.6",
+    "@deepseek-ai/dsh-session": "0.1.0-rc.6",
+    "@deepseek-ai/dsh-invariants": "0.0.1-rc.1",
+    "@deepseek-ai/dsh-scope": "0.0.1-rc.1",
+    "@deepseek-ai/dsh-brand": "0.0.1-rc.1",
+    "@deepseek-ai/dsh-system-prompt": "0.0.1-rc.1",
+    "@deepseek-ai/dsh-typert-protocol": "0.1.0-rc.6",
+    "@deepseek-ai/dsh-timeout": "0.0.1-rc.1",
+    "@deepseek-ai/dsh-attachment": "0.0.1-rc.1",
+    "@deepseek-ai/dsh-sandbox": "0.0.1-rc.1",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "gsd",
+    "gsd-core",
+    "cordis",
+    "spec-driven-development"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<your-account>/dsh-gsd-bridge.git"
+  }
+}

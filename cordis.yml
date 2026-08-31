@@ -1,0 +1,8 @@
+# Local source overlay: clone, build, then run
+#   dsh web --patch ./cordis.yml
+# The relative plugin name resolves beside this file, so it picks up ./lib
+# after `npm run build`.
+
+- insert:
+    - id: gsd-bridge
+      name: ./lib/index.js

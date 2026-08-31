@@ -1,0 +1,7 @@
+# The dsh-gsd-bridge bundle patch: inserts this plugin over any composition
+# that already provides the `fs` and `commands` services (the dsh base and
+# web profiles both do). Config keys omitted here keep their schema defaults.
+
+- insert:
+    - id: gsd-bridge
+      name: 'dsh-gsd-bridge'
