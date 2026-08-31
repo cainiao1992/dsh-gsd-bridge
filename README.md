@@ -21,14 +21,14 @@ Mount [GSD Core](https://github.com/open-gsd/gsd-core) — the spec-driven devel
 Direct from GitHub (no npm publish). The `prepare` script builds `lib/` automatically on install.
 
 ```bash
-dsh plugin --profile web add github:<your-account>/dsh-gsd-bridge --config.auto-install-peers=false
+dsh plugin --profile web add github:cainiao1992/dsh-gsd-bridge --config.auto-install-peers=false
 ```
 
 `dsh plugin` forwards its arguments verbatim to pnpm inside the profile directory. `--config.auto-install-peers=false` avoids the incomplete rc-era peer graph of the `@deepseek-ai/dsh-*` packages — in a profile the peers are already provided by the host bundles, so they are not re-installed. Equivalent manual form:
 
 ```bash
 cd ~/.dsh/profiles/web
-corepack pnpm add github:<your-account>/dsh-gsd-bridge --config.auto-install-peers=false
+corepack pnpm add github:cainiao1992/dsh-gsd-bridge --config.auto-install-peers=false
 ```
 
 Then mount it by replacing the local absolute path with the bare package name (the loader resolves bare names against the config-file directory → the profile's `node_modules`):

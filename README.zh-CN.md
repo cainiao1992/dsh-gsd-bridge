@@ -21,14 +21,14 @@
 直接从 GitHub 安装（无需 npm publish）。`prepare` 脚本会在安装时自动构建 `lib/`。
 
 ```bash
-dsh plugin --profile web add github:<your-account>/dsh-gsd-bridge --config.auto-install-peers=false
+dsh plugin --profile web add github:cainiao1992/dsh-gsd-bridge --config.auto-install-peers=false
 ```
 
 `dsh plugin` 会把参数原样转发给 profile 目录里的 pnpm。`--config.auto-install-peers=false` 用于绕开 `@deepseek-ai/dsh-*` 包 rc 期尚不完整的 peer 图——在 profile 场景中 peer 已由宿主 bundle 提供，无需重复安装。等价的手工形式：
 
 ```bash
 cd ~/.dsh/profiles/web
-corepack pnpm add github:<your-account>/dsh-gsd-bridge --config.auto-install-peers=false
+corepack pnpm add github:cainiao1992/dsh-gsd-bridge --config.auto-install-peers=false
 ```
 
 然后挂载：把本地绝对路径换成 bare 包名（loader 以配置文件目录为基准解析 bare 名 → profile 的 `node_modules`）：
