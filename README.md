@@ -101,7 +101,7 @@ Type contracts come from the published `@deepseek-ai/dsh-*` declarations (`dsh-c
 
 ## Known limitations
 
-- gsd-core is pinned to `1.12.0`; an upgrade requires re-validating the command-body format.
+- gsd-core is bumped daily by the [sync-gsd-core workflow](.github/workflows/sync-gsd-core.yml); the only gate is an automated command-surface smoke check, so a format-breaking upstream release can still land unreviewed.
 - The dsh npm packages are rc-phase; installs need `--config.auto-install-peers=false` (drop it once the upstream peer graph is complete).
 - PreToolUse-class hooks are not ported (the dsh native stack covers them); `write-guard` (protection against catastrophic `.planning/` overwrites) is a known gap.
 - GSD named agents (`gsd-executor`, …) map to subagent delegation with persona-file prompts, not native agent types.

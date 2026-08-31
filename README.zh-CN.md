@@ -101,7 +101,7 @@ npm run build                    # tsc → lib/
 
 ## 已知限制
 
-- gsd-core 钉在 `1.12.0`；升级需重新验证命令体格式。
+- gsd-core 由 [sync-gsd-core 工作流](.github/workflows/sync-gsd-core.yml) 每日自动升级；仅有一道命令面冒烟检查作为门槛，破坏格式的上游版本仍可能在无人审查的情况下进入。
 - dsh npm 包处于 rc 期；安装需 `--config.auto-install-peers=false`（上游 peer 图补全后可移除）。
 - PreToolUse 类 hook 未移植（dsh 原生栈已覆盖）；`write-guard`（`.planning/` 灾难覆写防护）为已知缺口。
 - GSD 命名 agent（`gsd-executor` 等）映射为 subagent + persona 文件提示，非原生 agent 类型。
