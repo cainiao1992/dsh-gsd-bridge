@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@deepseek-ai/dsh-llm": ">=0.0.1-rc.1",
-    "@opengsd/gsd-core": "1.12.0",
+    "@opengsd/gsd-core": "1.13.0",
     "@deepseek-ai/schemastery": "^3.18.1"
   },
   "peerDependencies": {
